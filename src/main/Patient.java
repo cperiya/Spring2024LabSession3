@@ -4,16 +4,54 @@
  */
 package main;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author HP PC
  */
-public class User {
+public class Patient {
    String firstName;
    String lastName;
-   String age;
+   int age;
    String email;
    String message;
+   String gender;
+   String photo;
+   ImageIcon userPhoto;
+
+    public String getPatientType() {
+        return PatientType;
+    }
+
+    public void setPatientType(String PatientType) {
+        this.PatientType = PatientType;
+    }
+   String PatientType;
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
+    public ImageIcon getUserPhoto() {
+        return userPhoto;
+    }
+
+    public void setUserPhoto(ImageIcon userPhoto) {
+        this.userPhoto = userPhoto;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -31,11 +69,11 @@ public class User {
         this.lastName = lastName;
     }
 
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
