@@ -19,6 +19,15 @@ public class Patient {
    String gender;
    String photo;
    ImageIcon userPhoto;
+   String registrationDate;
+
+    public String getRegistrationDate() {
+        return registrationDate;
+    }
+
+    public void setRegistrationDate(String registrationDate) {
+        this.registrationDate = registrationDate;
+    }
 
     public String getPatientType() {
         return PatientType;

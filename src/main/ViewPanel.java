@@ -59,6 +59,7 @@ public class ViewPanel extends javax.swing.JPanel {
         firstNameLabel = new javax.swing.JLabel();
         imageLabel = new javax.swing.JLabel();
         patientTypeTextLabel = new javax.swing.JLabel();
+        registrationDateTextLabel = new javax.swing.JLabel();
 
         viewTitleLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         viewTitleLabel.setText("VIEW DETAILS");
@@ -90,7 +91,6 @@ public class ViewPanel extends javax.swing.JPanel {
 
         firstNameTextField.setEditable(false);
         firstNameTextField.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        firstNameTextField.setEnabled(false);
 
         messageTextArea.setColumns(20);
         messageTextArea.setRows(5);
@@ -98,13 +98,10 @@ public class ViewPanel extends javax.swing.JPanel {
         jScrollPane2.setViewportView(messageTextArea);
 
         lastNameTextField.setEditable(false);
-        lastNameTextField.setEnabled(false);
 
         ageTextField.setEditable(false);
-        ageTextField.setEnabled(false);
 
         emailTextField.setEditable(false);
-        emailTextField.setEnabled(false);
 
         registrationDateLabel.setText("Registration Date");
 
@@ -117,9 +114,13 @@ public class ViewPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(176, 176, 176)
+                .addGap(155, 155, 155)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(registrationDateLabel)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(registrationDateLabel)
+                        .addGap(18, 18, 18)
+                        .addComponent(registrationDateTextLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(firstNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -140,16 +141,16 @@ public class ViewPanel extends javax.swing.JPanel {
                                         .addComponent(femaleRadioButton)
                                         .addGap(18, 18, 18)
                                         .addComponent(otherGenderRadioButton))
-                                    .addComponent(ageTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lastNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(firstNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                                    .addComponent(ageTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
+                                    .addComponent(lastNameTextField)
+                                    .addComponent(firstNameTextField, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addGap(41, 41, 41)
                                 .addComponent(imageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane2)
                                     .addComponent(emailTextField, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(patientTypeTextLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(patientTypeTextLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addGap(36, 36, 36))
         );
@@ -191,8 +192,10 @@ public class ViewPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(patientTypeTextLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(24, 24, 24)
-                .addComponent(registrationDateLabel)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(registrationDateLabel)
+                    .addComponent(registrationDateTextLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(messageLabel)
@@ -223,6 +226,7 @@ public class ViewPanel extends javax.swing.JPanel {
     private javax.swing.JLabel patientTypeLabel;
     private javax.swing.JLabel patientTypeTextLabel;
     private javax.swing.JLabel registrationDateLabel;
+    private javax.swing.JLabel registrationDateTextLabel;
     private javax.swing.JLabel viewTitleLabel;
     // End of variables declaration//GEN-END:variables
 
@@ -235,6 +239,7 @@ public class ViewPanel extends javax.swing.JPanel {
             emailTextField.setText(u.getEmail());
             patientTypeTextLabel.setText(u.getPatientType());
             messageTextArea.setText(u.getMessage());
+            registrationDateTextLabel.setText(u.getRegistrationDate());
             ArrayList<JRadioButton> genderOptions = new ArrayList<JRadioButton>();
             genderOptions.add(maleRadioButton);
             genderOptions.add(femaleRadioButton);

@@ -21,9 +21,14 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="176" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="registrationDateLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="registrationDateLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="registrationDateTextLabel" min="-2" pref="225" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="firstNameLabel" min="-2" pref="65" max="-2" attributes="0"/>
@@ -46,18 +51,18 @@
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="otherGenderRadioButton" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="ageTextField" alignment="0" min="-2" pref="172" max="-2" attributes="0"/>
-                                  <Component id="lastNameTextField" alignment="0" min="-2" pref="172" max="-2" attributes="0"/>
-                                  <Component id="firstNameTextField" alignment="0" min="-2" pref="172" max="-2" attributes="0"/>
+                                  <Component id="ageTextField" alignment="0" pref="234" max="32767" attributes="0"/>
+                                  <Component id="lastNameTextField" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="firstNameTextField" alignment="1" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="38" max="32767" attributes="0"/>
+                              <EmptySpace min="41" pref="41" max="-2" attributes="0"/>
                               <Component id="imageLabel" min="-2" pref="109" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane2" max="32767" attributes="0"/>
                                   <Component id="emailTextField" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="patientTypeTextLabel" alignment="0" min="-2" pref="174" max="-2" attributes="0"/>
+                                  <Component id="patientTypeTextLabel" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
@@ -118,8 +123,11 @@
                       <Component id="patientTypeTextLabel" min="-2" pref="22" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-              <Component id="registrationDateLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="registrationDateLabel" min="-2" max="-2" attributes="0"/>
+                  <Component id="registrationDateTextLabel" min="-2" pref="22" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="messageLabel" min="-2" max="-2" attributes="0"/>
@@ -200,7 +208,6 @@
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Default Cursor"/>
         </Property>
-        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane2">
@@ -222,19 +229,16 @@
     <Component class="javax.swing.JTextField" name="lastNameTextField">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
-        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="ageTextField">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
-        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="emailTextField">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
-        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="registrationDateLabel">
@@ -255,6 +259,8 @@
     <Component class="javax.swing.JLabel" name="imageLabel">
     </Component>
     <Component class="javax.swing.JLabel" name="patientTypeTextLabel">
+    </Component>
+    <Component class="javax.swing.JLabel" name="registrationDateTextLabel">
     </Component>
   </SubComponents>
 </Form>
