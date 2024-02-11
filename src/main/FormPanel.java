@@ -154,6 +154,11 @@ public class FormPanel extends javax.swing.JPanel {
 
         messageTextArea.setColumns(20);
         messageTextArea.setRows(5);
+        messageTextArea.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                messageTextAreaFocusLost(evt);
+            }
+        });
         jScrollPane1.setViewportView(messageTextArea);
 
         photoUploadLabel.setText("Photo");
@@ -303,16 +308,45 @@ public class FormPanel extends javax.swing.JPanel {
    
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         // TODO add your handling code here:
-        if(patientTypeComboBox.getSelectedIndex() == -1)
-                    
+        boolean validInput = true;
+        if(!isValidName(firstNameTextField.getText()))
         {
+            validInput = false;
+            JOptionPane.showMessageDialog(this, "Invalid First Name. Please update and resubmit."  );
+        }
+        if(!isValidName(lastNameTextField.getText()))
+        {
+            validInput = false;
+            JOptionPane.showMessageDialog(this, "Invalid Last Name. Please update and resubmit."  );
+        }
+        if(!isValidAge(Integer.parseInt(ageTextField.getText())))
+        {
+            validInput = false;
+            JOptionPane.showMessageDialog(this, "Invalid Age. Please update and resubmit."  );
+        }
+        if(patientTypeComboBox.getSelectedIndex() == -1)                  
+        {
+            validInput = false;
             JOptionPane.showMessageDialog(this, "Please select Patient Type."  );
         }
-        else if(genderRadioGroup.getSelection()== null)
+        if(genderRadioGroup.getSelection()== null)
         {
+            validInput = false;
             JOptionPane.showMessageDialog(this, "Please select Patient Gender."  );
         }
-        else
+        if (!isValidEmail(emailTextField.getText()))
+        {
+            validInput = false;
+            JOptionPane.showMessageDialog(this, "Invalid EmailId. Please enter a valid EmailId and resubmit."  );
+        }
+        if (!isValidMessage(messageTextArea.getText()))
+        {
+            validInput = false;
+            JOptionPane.showMessageDialog(this, "Invalid Message. Please enter a valid Message."  );
+        }
+        
+        if (validInput)
+        
         {           
         
             Patient newUser = new Patient();
@@ -341,7 +375,15 @@ public class FormPanel extends javax.swing.JPanel {
         
     }//GEN-LAST:event_submitButtonActionPerformed
 
-     public static boolean isValidName(String firstName) {
+    public static boolean isValidMessage(String messageText) {
+        // is null or empty
+        if (messageText == null || messageText.trim().isEmpty()) {
+            return false;
+        }
+
+        return true;
+    }
+    public static boolean isValidName(String firstName) {
         // is null or empty
         if (firstName == null || firstName.trim().isEmpty()) {
             return false;
@@ -482,6 +524,15 @@ public class FormPanel extends javax.swing.JPanel {
              ageTextField.setForeground(Color.red);       
         }
     }//GEN-LAST:event_ageTextFieldKeyPressed
+
+    private void messageTextAreaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_messageTextAreaFocusLost
+        // TODO add your handling code here:
+        String messageData  = messageTextArea.getText();
+         if (messageData == null || messageData.trim().isEmpty()) {
+          
+            JOptionPane.showMessageDialog(this, "Invalid valid Message."  );
+        }
+    }//GEN-LAST:event_messageTextAreaFocusLost
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
