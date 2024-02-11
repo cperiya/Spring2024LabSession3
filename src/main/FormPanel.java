@@ -9,6 +9,7 @@ import java.awt.Color;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.regex.Matcher;
@@ -358,9 +359,10 @@ public class FormPanel extends javax.swing.JPanel {
             newUser.setPhoto(photoUploadTextField.getText());
             newUser.setGender(genderRadioGroup.getSelection().getActionCommand());
             newUser.setPatientType(patientTypeComboBox.getSelectedItem().toString());
-            newUser.setRegistrationDate(registrationDateChooser.getCalendar().getTime().toString());
+            SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            newUser.setRegistrationDate(format1.format(registrationDateChooser.getCalendar().getTime()));
             ImageIcon imageIcon = new ImageIcon(newUser.getPhoto());
-            Image image = imageIcon.getImage().getScaledInstance(60, 50, Image.SCALE_SMOOTH);
+            Image image = imageIcon.getImage().getScaledInstance(110, 121, Image.SCALE_SMOOTH);
             newUser.setUserPhoto(new ImageIcon(image));
 
 
